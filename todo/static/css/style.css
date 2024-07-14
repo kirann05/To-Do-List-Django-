@@ -1,0 +1,390 @@
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-image: url('/static/images/logo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-color: #ffffff; /* Fallback color */
+    margin: 0;
+    padding: 0;
+    color: #0a0a0a;
+    display: flex;
+    align-items: center; /* Vertical center */
+    justify-content: center; /* Center align horizontally */
+    height: 100vh; /* Full height */
+}
+
+/* CSS for the form control styling */
+.form-control {
+    width: calc(100% - 22px);
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #6BA3E8;
+    outline: none;
+    box-shadow: 0 0 5px rgba(107, 163, 232, 0.5);
+}
+
+/* Add this to ensure consistency */
+.add-task-form label {
+    font-size: larger;
+    font-weight:bold;
+    margin-bottom: 5em;
+    writing-mode: horizontal-tb;
+    color: #101010d6;
+}
+
+/* Additional form styling */
+.add-task-form {
+    margin-bottom: 3em;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-task-form button {
+    width: 50%;
+    padding: 12px;
+    background-color: #3e9ddd;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
+}
+
+.add-task-form button:hover {
+    background-color: #277ce5;;
+}
+
+.center-column {
+    width: 60%; /* Cover 60% of the web page */
+    height: auto; /* Adjust height automatically */
+    padding: 30px;
+    background-color: hsla(0, 5%, 58%, 0.354);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+}
+
+
+h1.title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3.4em;
+    /* color: #171717b1; */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.add-task-form {
+    width: 100%;
+    margin-bottom: 10px;
+    /* margin-block: 5% 20%; */
+}
+
+.add-task-form {
+    margin-bottom: 3em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.add-task-form label {
+    font-size: larger;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #101010c9;
+}
+
+.add-task-form .due-fields {
+    display:flex;
+    gap: 10px; /* Adjust the gap between date and time fields */
+}
+
+ .add-task-form button {
+    width: 50%;
+    padding: 12px;
+    background-color: #3e9ddd;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
+}
+
+.add-task-form button:hover {
+    background-color: #277ce5;
+} 
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #3e9ddd;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #277ce5;
+}
+
+.item-row {
+    display: flex;
+    width: 70% !important;
+    align-items: center;
+    background-color: hsla(0, 16%, 89%, 0.733);
+    margin: 10px 10px 10px 10px;
+    padding: 15px 15px 15px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.item-row:hover {
+    transform: translateY(-2px);
+}
+
+.task-checkbox {
+    margin-right: 15px;
+}
+
+.task-title {
+    flex-grow: 1;
+    font-size: 1.3em;
+    color: #161515;
+    font-family: 'Lato', sans-serif;
+}
+
+
+.task-title.completed {
+    text-decoration: line-through;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px;
+    color: #1f1d1d;
+    background-color: hsla(0, 5%, 58%, 0.354);
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-action {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #6BA3E8;
+    transition: color 0.3s ease;
+}
+
+.btn-action:hover {
+    color: #5a90d4;
+}
+
+.btn-action.delete-task:hover {
+    color: #e74c3c;
+}
+
+.empty-list {
+    text-align: center;
+    font-size: larger;
+    color: hsla(0, 0%, 5%, 0.708);
+    font-style: italic;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #b5bbc1c2;
+    font-family: 'Montserrat', sans-serif !important;
+    margin: 20% 30% !important;
+    padding: 20px;
+    border-radius: 10px;
+    width: 70%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal h2 {
+    margin-top: 20px;
+    color: #2c3e50;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-cancel {
+    background-color: #e84444;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cancel:hover {
+    background-color: #ec0707;
+}
+
+.btn-delete {
+    background-color: #da4231;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+}
+
+.completed-tasks-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.completed-item-row {
+    display: flex;
+    align-items: center;
+    background-color: hsla(0, 5%, 58%, 0.354);
+    margin-bottom: 15px; 
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+}
+
+.completed-item-row:hover {
+    transform: translateY(-2px);
+    background-color: hsla(0, 5%, 58%, 0.354);
+    border-color: #060606;
+}
+
+.completed-task-title {
+    flex-grow: 2;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1em;
+    color: #060606;
+    text-align: center;
+}
+
+.btn-info {
+    background-color: #3498db; /* Blue background */
+    color: #fff; /* White text */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Padding for size */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1em; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    display: inline-flex; /* Flex for aligning icon and text */
+    align-items: center; /* Center align icon and text */
+}
+
+.btn-info:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+.btn-info .icon {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.task-due-container {
+    display: flex; /* Use flexbox to arrange child elements horizontally */
+    align-items: center; /* Align items vertically center */
+    gap: 10px; /* Add space between the due date and due time blocks */
+}
+
+.task-due-date,
+.task-due-time {
+    font-size: 1.2em; /* Smaller font size */
+    color: #333; /* Darker color for better contrast */
+    background-color: #f0f0f098; /* Light background for better readability */
+    padding: 5px 10px; /* Padding inside the blocks */
+    border-radius: 10px; /* Rounded corners */
+    border: 1px solid #ddd; /* Light border */
+}
+/* Container for due date and time to arrange them horizontally */
+.due-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between due date and due time */
+    margin-bottom: 20px; /* Space below the container */
+}
+
+/* Styling for the due date and due time labels */
+.due-container label {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #101010c9;
+    margin-bottom: 1em; /* Remove bottom margin */
+}
+
+/* Styling for the due date and due time input fields */
+.due-container input[type="date"],
+.due-container input[type="time"] {
+    padding: 10px;
+    border: 1px solid #ffffff87;
+    border-radius: 10px;
+    font-size: 0.9em;
+    transition: border-color 0.3s ease;
+    flex: 1; /* Allow input fields to grow equally */
+}
+
+/* Focus styling for due date and due time input fields */
+.due-container input[type="date"]:focus,
+.due-container input[type="time"]:focus {
+    border-color: #6BA3E8;
+    outline: none;
+    box-shadow: 0 0 5px rgba(107, 163, 232, 0.5);
+}
+
+.updateTaskInput {
+    width: 70%;
+    padding: 12px; 
+    margin-bottom: 20px;
+    margin-top: 20px; 
+    border: 1px solid #ddddddab; 
+    border-radius: 5px; 
+    font-size: 1em; 
+    transition: border-color 0.3s ease;
+}
